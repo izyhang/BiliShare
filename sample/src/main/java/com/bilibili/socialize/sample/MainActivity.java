@@ -22,9 +22,6 @@ import com.bilibili.socialize.share.core.shareparam.ShareVideo;
 
 import java.util.Locale;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * 这个类只是为了演示如何分享，如果想体验分享效果，请下载哔哩哔哩动画app。
  *
@@ -44,7 +41,6 @@ public class MainActivity extends BaseShareableActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         setUpViews();
     }
 
@@ -98,24 +94,15 @@ public class MainActivity extends BaseShareableActivity {
         return image;
     }
 
-    @OnClick(R.id.btn1)
-    void shareWithDialogSelector() {
+    void shareWithDialogSelector(View clickView) {
         startShare(null);
     }
 
-    @OnClick(R.id.btn2)
     void shareWithFullPopSelector(View clickView) {
         startShare(clickView, true);
     }
 
-    @OnClick(R.id.btn3)
     void shareWithWrapPopSelector(View clickView) {
         startShare(clickView, false);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

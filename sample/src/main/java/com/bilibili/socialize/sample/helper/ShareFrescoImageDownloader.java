@@ -27,6 +27,7 @@ import com.facebook.datasource.BaseDataSubscriber;
 import com.facebook.datasource.DataSource;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.cache.DefaultCacheKeyFactory;
+import com.facebook.imagepipeline.core.ImagePipelineFactory;
 import com.facebook.imagepipeline.image.CloseableImage;
 import com.facebook.imagepipeline.request.ImageRequest;
 
@@ -56,10 +57,13 @@ public class ShareFrescoImageDownloader extends AbsImageDownloader {
                 if (result != null) {
                     ImageRequest imageRequest = ImageRequest.fromUri(imageUrl);
                     CacheKey cacheKey = DefaultCacheKeyFactory.getInstance()
-                            .getEncodedCacheKey(imageRequest);
-                    BinaryResource resource = Fresco.getImagePipelineFactory()
-                            .getMainDiskStorageCache()
+                            .getEncodedCacheKey(imageRequest, this);
+                    BinaryResource resource = ImagePipelineFactory.getInstance()
+                            .getMainFileCache()
                             .getResource(cacheKey);
+//                            Fresco.getImagePipelineFactory()
+//                            .getMainDiskStorageCache()
+//                            .getResource(cacheKey);
                     if (resource instanceof FileBinaryResource) {
                         File cacheFile = ((FileBinaryResource) resource).getFile();
                         try {
