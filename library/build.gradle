@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        versionCode 1
+        versionName POM_PUBLISH_VERSION
     }
     buildTypes {
         release {
@@ -23,6 +23,8 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.sina.weibo.sdk:core:4.3.1:openDefaultRelease@aar'
+    api 'com.sina.weibo.sdk:core:4.3.6:openDefaultRelease@aar'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.6'
 }
+
+apply from: 'https://raw.githubusercontent.com/izyhang/novoda-push/master/gradle/push.gradle'
