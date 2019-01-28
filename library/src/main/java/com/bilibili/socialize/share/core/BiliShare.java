@@ -151,7 +151,7 @@ public class BiliShare {
             case WEIXIN_MONMENT:
             case QQ:
             case QZONE:
-            case SINA:
+//            case SINA:
                 handler = new ShareTransitHandler(context, shareConfiguration, type, mName);
                 break;
 

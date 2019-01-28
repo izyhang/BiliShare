@@ -20,8 +20,6 @@ import com.bilibili.socialize.share.core.shareparam.ShareParamVideo;
 import com.bilibili.socialize.share.core.shareparam.ShareParamWebPage;
 import com.bilibili.socialize.share.core.shareparam.ShareVideo;
 
-import java.util.Locale;
-
 /**
  * 这个类只是为了演示如何分享，如果想体验分享效果，请下载哔哩哔哩动画app。
  *
@@ -77,9 +75,10 @@ public class MainActivity extends BaseShareableActivity {
             param = new ShareParamText(TITLE, CONTENT, TARGET_URL);
         }
 
-        if (target == SocializeMedia.SINA)
-            param.setContent(String.format(Locale.CHINA, "%s #哔哩哔哩动画# ", CONTENT));
-        else if (target == SocializeMedia.GENERIC || target == SocializeMedia.COPY) {
+//        if (target == SocializeMedia.SINA)
+//            param.setContent(String.format(Locale.CHINA, "%s #哔哩哔哩动画# ", CONTENT));
+//        else
+            if (target == SocializeMedia.GENERIC || target == SocializeMedia.COPY) {
             param.setContent(CONTENT + " " + TARGET_URL);
         }
 

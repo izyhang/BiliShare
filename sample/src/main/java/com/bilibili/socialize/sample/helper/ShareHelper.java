@@ -28,7 +28,7 @@ import com.bilibili.socialize.share.utils.selector.PopWrapSharePlatformSelector;
 public final class ShareHelper {
     public static final String QQ_APPID = "";
     public static final String WECHAT_APPID = "";
-    public static final String SINA_APPKEY = "";
+//    public static final String SINA_APPKEY = "";
 
     static final String APP_URL = "http://app.bilibili.com";
     private FragmentActivity mContext;
@@ -49,7 +49,7 @@ public final class ShareHelper {
                 .imageDownloader(new ShareFrescoImageDownloader())
                 .qq(QQ_APPID)
                 .weixin(WECHAT_APPID)
-                .sina(SINA_APPKEY, null, null)
+//                .sina(SINA_APPKEY, null, null)
                 .build();
         shareClient().config(configuration);
     }

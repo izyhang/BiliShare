@@ -24,7 +24,7 @@ package com.bilibili.socialize.share.core;
 public enum SocializeMedia {
 
     GENERIC("generic"),
-    SINA("sina"),
+//    SINA("sina"),
     QZONE("qzone"),
     QQ("qq"),
     WEIXIN("weixin"),

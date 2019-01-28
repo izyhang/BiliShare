@@ -1,35 +1,27 @@
 # BiliShare
-[ ![Download](https://api.bintray.com/packages/jungerr/maven/biliShare/images/download.svg)](https://bintray.com/jungerr/maven/biliShare/_latestVersion)
+[![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[ ![Download](https://api.bintray.com/packages/zyhang/maven/BiliShare/images/download.svg?version=1.0.0-alpha1) ](https://bintray.com/zyhang/maven/BiliShare/1.0.0-alpha1/link)
+[![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://developer.android.com/about/versions/android-4.0.3)
 
-支持分享到微博、QQ聊天、QQ空间、微信聊天、微信朋友圈，系统分享等。
+> 本项目fork自bilibili/BiliShare
 
-QQ交流群：397462257
-
-## 预览
- - 下载demo [bilibili][1]
- - screenshot
-
- ![screenshot][2]
+支持分享到QQ聊天、QQ空间、微信聊天、微信朋友圈，系统分享等。
 
 ## 使用姿势
 
 ### 配置
 
  - 在build.gradle里添加依赖.
- "biliShare"是核心库(必需)，"biliShare-util"是分享的选择器(非必需)，如上截图所示.
 
 ```
-
 allprojects {
     repositories {
         jcenter()
-        maven { url "https://dl.bintray.com/thelasterstar/maven/"}
     }
 }
 
 dependencies {
-    compile 'com.jungly.socialize:biliShare:0.1.0701' //必需
-    compile 'com.jungly.socialize:biliShare-util:0.1.0701@aar' //非必需
+    implementation 'com.zyhang:bilishare:lastest-version'
 }
 ```
 
@@ -64,7 +56,6 @@ public class WXEntryActivity extends BaseWXEntryActivity {
     android:name=".wxapi.WXEntryActivity"
     android:configChanges="keyboardHidden|orientation|screenSize"
     android:exported="true"
-    android:screenOrientation="portrait"
     android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 ```
 
@@ -74,7 +65,6 @@ public class WXEntryActivity extends BaseWXEntryActivity {
 
  ```java
  BiliShareConfiguration configuration = new BiliShareConfiguration.Builder(context)
-                .sina(appKey, redirectUrl, scope) //配置新浪
                 .qq(appId) //配置qq
                 .weixin(appId) //配置微信
                 .imageDownloader(new ShareFrescoImageDownloader()) //图片下载器
@@ -87,33 +77,4 @@ public class WXEntryActivity extends BaseWXEntryActivity {
     shareClient.share(context, socializeMedia, shareParam, shareListener);
  ```
 
- - 具体参考/sample/src/main/java/com/bilibili/socialize/sample/MainActivity.class
-
-## 版本
-|版本|时间|变更|
-| :-- | :-- | :-- |
-|0.1.0701|2017-05-05|1，升级微博SDK至2.0.3；<br/>2，升级QQ SDK至5788；<br/>3，升级微信SDK至1.1.6；<br/>4，去除BiliShare的onActivityResult()。<br/>5，解决若干bug。|
-|0.1.06|2017-04-24|支持多BiliShare实例，方便多业务隔离|
-|......|||
-
-
-License
----
-
-    Copyright 2015-2017 Bilibili
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-
-  [1]: http://wsdownload.hdslb.net/app/BiliPlayer3.apk
-  [2]: http://7qnau5.com1.z0.glb.clouddn.com/Screenshot_2016-04-26-00-13-35.png?imageView2/1/w/360/h/640
+ - 具体参考/sample/src/main/java/com/bilibili/socialize/sample/MainActivity.java

@@ -96,10 +96,10 @@ public class BiliShareDelegateActivity extends Activity {
 
         if (savedInstanceState == null) {
             switch (mSocializeMedia) {
-                case SINA:
-                    Log.d(TAG, "gonna start sina assist act");
-                    SinaAssistActivity.start(this, mShareParam, mShareConfig, REQ_CODE);
-                    break;
+//                case SINA:
+//                    Log.d(TAG, "gonna start sina assist act");
+//                    SinaAssistActivity.start(this, mShareParam, mShareConfig, REQ_CODE);
+//                    break;
 
                 case WEIXIN:
                 case WEIXIN_MONMENT:

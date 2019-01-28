@@ -43,7 +43,7 @@ public abstract class BaseSharePlatformSelector {
     private AdapterView.OnItemClickListener mItemClickListener;
 
     private static ShareTarget[] shareTargets = {
-            new ShareTarget(SocializeMedia.SINA),
+//            new ShareTarget(SocializeMedia.SINA),
             new ShareTarget(SocializeMedia.WEIXIN),
             new ShareTarget(SocializeMedia.WEIXIN_MONMENT),
             new ShareTarget(SocializeMedia.QQ),
@@ -115,9 +115,9 @@ public abstract class BaseSharePlatformSelector {
         public ShareTarget(SocializeMedia media) {
             this.media = media;
             switch (this.media) {
-                case SINA:
-                    init(R.string.bili_socialize_text_sina_key, R.drawable.bili_socialize_sina_on);
-                    break;
+//                case SINA:
+//                    init(R.string.bili_socialize_text_sina_key, R.drawable.bili_socialize_sina_on);
+//                    break;
                 case WEIXIN:
                     init(R.string.bili_socialize_text_weixin_key, R.drawable.bili_socialize_wechat);
                     break;
