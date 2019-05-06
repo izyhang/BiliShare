@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bilibili.socialize.share">
+
+    <application>
+        <activity
+        android:name="com.bilibili.socialize.share.core.ui.SinaAssistActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+</manifest>

@@ -116,6 +116,11 @@ public class BiliShareConfiguration implements Parcelable {
 //            return this;
 //        }
 
+        public Builder extend() {
+
+            return this;
+        }
+
         public Builder imageDownloader(IImageDownloader loader) {
             mImageLoader = loader;
             return this;

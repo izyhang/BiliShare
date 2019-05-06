@@ -147,20 +147,20 @@ public class BiliShare {
     private IShareHandler newHandler(Activity context, SocializeMedia type, BiliShareConfiguration shareConfiguration) {
         IShareHandler handler = null;
         switch (type) {
+            case GENERIC:
+                handler = new GenericShareHandler(context, shareConfiguration);
+                break;
+            case COPY:
+                handler = new CopyShareHandler(context, shareConfiguration);
+                break;
             case WEIXIN:
             case WEIXIN_MONMENT:
             case QQ:
             case QZONE:
-//            case SINA:
                 handler = new ShareTransitHandler(context, shareConfiguration, type, mName);
                 break;
-
-            case COPY:
-                handler = new CopyShareHandler(context, shareConfiguration);
-                break;
-
             default:
-                handler = new GenericShareHandler(context, shareConfiguration);
+                handler = new ShareTransitHandler(context, shareConfiguration, type, mName);
         }
 
         Log.d(TAG, String.format("create handler type(%s)", handler.getClass().getSimpleName()));
